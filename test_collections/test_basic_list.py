@@ -8,8 +8,21 @@ class TestList(unittest.TestCase):
     def test_make_list(self, input):
         self.assertEqual(basic.make_list(), [5, 5, 5, 5, 5])
 
+class TestList_nonNumeric(unittest.TestCase):
     @patch('fun_with_collections.basic_list.get_input', return_value='ab')
     def test_make_list_non_numeric(self, input):
+        with self.assertRaises(ValueError):
+            basic_list.make_list()
+
+class TestList_below(unittest.TestCase):
+    @patch('fun_with_collections.basic_list.get_input', return_value='ab')
+    def test_make_list_below_range(self, input):
+        with self.assertRaises(ValueError):
+            basic_list.make_list()
+
+class TestList_above(unittest.TestCase):
+    @patch('fun_with_collections.basic_list.get_input', return_value='ab')
+    def test_make_list_above_range(self, input):
         with self.assertRaises(ValueError):
             basic_list.make_list()
 
