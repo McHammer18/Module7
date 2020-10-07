@@ -18,5 +18,8 @@ def get_input():
 
 
 if __name__ == '__main__':
-    test_list = make_list()
-    print(test_list)
+    try:
+        test_list = make_list()
+        print(test_list)
+    except ValueError:
+        print("You gave an invalid input please give numbers")
