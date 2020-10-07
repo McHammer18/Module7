@@ -1,6 +1,6 @@
 def make_list():
     u_list = []
-    for i in range(0,5):
+    for i in range(0, 5):
         try:
             u_input = int(get_input())
             if u_input < 1 or u_input > 50:
