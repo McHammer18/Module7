@@ -9,10 +9,10 @@ program that reads writes and gets info from files
 FILE_NAME = 'student_info.txt'
 MAX = 50
 MIN = 1
+IOERROR_MES = 'Can not open file on file system'
 
 
 def write_to_file(*args):
-    print(args)
     try:
         with open(FILE_NAME, 'a') as f:
             f.write('{}, {}: \t'.format(args[1], args[0]))
@@ -20,7 +20,7 @@ def write_to_file(*args):
                 f.write('{}\t'.format(i))
             f.write('\n')
     except IOError():
-        print("Can not open file on file system")
+        print(IOERROR_MES)
 
 
 def get_student_info(**kwargs):
@@ -38,12 +38,16 @@ def get_student_info(**kwargs):
                 scores.append(num)
         except ValueError as err:
             print(err)
-    all_scores = kwargs['first_name'], kwargs['last_name'], scores
-    print(all_scores)
     write_to_file(kwargs['first_name'], kwargs['last_name'], scores)
 
+
 def read_from_file():
-    pass
+    try:
+        with open(FILE_NAME, 'r') as f:
+            read_line = f.read()
+            print (read_line)
+    except IOError:
+        print(IOERROR_MES)
 
 
 if __name__ == '__main__':
