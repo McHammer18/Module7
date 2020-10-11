@@ -28,18 +28,22 @@ def get_input():
 
 
 def sort_list(list):
-    return list.sort()
-
-
-def search_list():
     pass
+
+
+def search_list(list, x):
+    for i in list:
+        if i == x:
+            return x
+        else:
+            ++i
 
 
 if __name__ == '__main__':
     try:
         test_list = make_list()
         print(test_list)
-        sorted_list = sort_list(test_list)
-        print(sorted_list)
+        search = search_list(test_list, 45)
+        print(search)
     except ValueError:
         print("You gave an invalid input please give numbers")
