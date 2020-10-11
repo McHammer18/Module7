@@ -30,8 +30,8 @@ def get_input():
 def sort_array(arr):
     """My function includes a return statement because
     with a print in the method my test does not pass"""
-    arr.sort()
-    return arr
+    #arr.sort()
+    #return arr
 
 
 def search_array(arr, x):
