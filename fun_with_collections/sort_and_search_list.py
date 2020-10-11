@@ -28,7 +28,10 @@ def get_input():
 
 
 def sort_list(list):
-    pass
+    """My function includes a return statement because
+    with a print in the method my test does not pass"""
+    list.sort()
+    return list
 
 
 def search_list(list, x):
@@ -48,5 +51,6 @@ if __name__ == '__main__':
         print(test_list)
         search = search_list(test_list, 45)
         print(search)
+        print(sort_list(test_list))
     except ValueError:
         print("You gave an invalid input please give numbers")
