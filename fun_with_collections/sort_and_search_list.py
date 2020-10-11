@@ -35,8 +35,11 @@ def search_list(list, x):
     for i in list:
         if i == x:
             return x
-        else:
+        elif i != x and i < len(list):
             ++i
+        else:
+            x = -1
+            return x
 
 
 if __name__ == '__main__':
