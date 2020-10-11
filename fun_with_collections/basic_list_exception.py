@@ -1,3 +1,13 @@
+"""
+Morgan Christensen
+
+Module 7- Basic list
+program that uses a function that takes user input and creates a list provided with exception hanndling
+
+10/06/20
+"""
+
+
 def make_list():
     u_list = []
     for i in range(0, 5):

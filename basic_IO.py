@@ -45,7 +45,7 @@ def read_from_file():
     try:
         with open(FILE_NAME, 'r') as f:
             read_line = f.read()
-            print (read_line)
+            print(read_line)
     except IOError:
         print(IOERROR_MES)
 
