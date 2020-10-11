@@ -9,7 +9,7 @@ program that has functions for sorting and searching through an array
 import array
 
 def make_array():
-    u_list = []
+    arr = []
     for i in range(0, 5):
         try:
             u_input = int(get_input())
@@ -18,8 +18,8 @@ def make_array():
         except ValueError:
             raise ValueError
         else:
-            u_list.insert(i, u_input)
-    return u_list
+            arr.insert(i, u_input)
+    return arr
 
 
 def get_input():
@@ -27,18 +27,18 @@ def get_input():
     return u_input
 
 
-def sort_list(list):
+def sort_array(arr):
     """My function includes a return statement because
     with a print in the method my test does not pass"""
-    list.sort()
-    return list
+    arr.sort()
+    return arr
 
 
-def search_list(list, x):
-    for i in list:
+def search_array(arr, x):
+    for i in arr:
         if i == x:
             return x
-        elif i != x and i < len(list):
+        elif i != x and i < len(arr):
             ++i
         else:
             x = -1
@@ -49,8 +49,8 @@ if __name__ == '__main__':
     try:
         test_array = make_array()
         print(test_array)
-        search = search_list(test_array, 45)
+        search = search_array(test_array, 45)
         print(search)
-        print(sort_list(test_array))
+        print(sort_array(test_array))
     except ValueError:
         print("You gave an invalid input please give numbers")
