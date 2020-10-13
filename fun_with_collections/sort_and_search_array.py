@@ -6,10 +6,10 @@ program that has functions for sorting and searching through an array
 
 10/11/20
 """
-import array
+import array as arr
 
 def make_array():
-    arr = []
+    a = arr.array = []
     for i in range(0, 5):
         try:
             u_input = int(get_input())
@@ -18,8 +18,8 @@ def make_array():
         except ValueError:
             raise ValueError
         else:
-            arr.insert(i, u_input)
-    return arr
+            a.insert(i, u_input)
+    return a
 
 
 def get_input():
@@ -27,18 +27,18 @@ def get_input():
     return u_input
 
 
-def sort_array(arr):
+def sort_array(a):
     """My function includes a return statement because
     with a print in the method my test does not pass"""
-    arr.sort()
-    return arr
+    a.sort()
+    return a
 
 
-def search_array(arr, x):
-    for i in arr:
+def search_array(a, x):
+    for i in a:
         if i == x:
             return x
-        elif i != x and i < len(arr):
+        elif i != x and i < len(a):
             ++i
         else:
             x = -1
